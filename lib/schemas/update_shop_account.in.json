@@ -1,0 +1,27 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+        },
+        "requestBody": {
+            "properties": {
+                "email": {
+                    "description": "See <<_openapi_shopaccountinput>>.",
+                    "type": "string"
+                },
+                "password": {
+                    "description": "See <<_openapi_shopaccountinput>>.",
+                    "type": "string"
+                },
+                "username": {
+                    "description": "See <<_openapi_shopaccountinput>>.",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

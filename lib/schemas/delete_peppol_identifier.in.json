@@ -1,0 +1,22 @@
+{
+    "type": "object",
+    "properties": {
+        "legal_entity_id": {
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+        },
+        "superscheme": {
+            "required": true,
+            "type": "string"
+        },
+        "scheme": {
+            "required": true,
+            "type": "string"
+        },
+        "identifier": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

@@ -1,0 +1,37 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "email": {
+                    "description": "This is email address determines where the invoices for all ShopAccounts\nin the same _external_user_id_ group are sent. Each time you create or\nupdate a ShopAccount for an _external_user_id_ and also provide\n__email__, the email destination for all the ShopAccounts in the\n_external_user_id_ group are updated at the same time.\n\nWe suggest you provide an immutable email address. If your user can\nchange the email address to which the invoices are to be sent, then you\nwill need to do an update for one of the ShopAccounts for that user in\norder for Storecove to start using the new email address.\n\nNote that this field is mandatory for the first ShopAccount that you create for an entity.\n",
+                    "type": "string"
+                },
+                "external_user_id": {
+                    "description": "The _external_user_id_ is what identifies the entity for which you create\nthis ShopAccount. This could be a user, however, if your\nusers can manage multiple organizations/administrations, then it is a\nbetter idea to put the organization/administration identifier in this\nfield, because the _external_user_id_ groups the ShopAccounts into a set\nthat all deliver their invoices to the same destination (typically an\nemail address).\n",
+                    "type": "string"
+                },
+                "password": {
+                    "description": "The password for the account.",
+                    "type": "string"
+                },
+                "shop_id": {
+                    "description": "The id of the Shop the account is for.",
+                    "format": "int64",
+                    "type": "integer"
+                },
+                "username": {
+                    "description": "The username for the account. The username needs to be unique in combination with the shop_id.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "username",
+                "password",
+                "external_user_id",
+                "shop_id"
+            ],
+            "type": "object"
+        }
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "type": "object",
+    "properties": {
+        "cc": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

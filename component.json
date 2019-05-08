@@ -1,0 +1,412 @@
+{
+    "title": "Storecove",
+    "description": "Storecove API",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/storecove.com/2.0.1/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://api.storecove.com/api/v2",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "Bearer": {
+                "label": "Authorization (Bearer)",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "create_invoice_submission": {
+            "main": "./lib/actions/create_invoice_submission.js",
+            "title": "Submit a new invoice",
+            "description": "Submit an invoice for delivery.\ninclude::examples/invoice_submissions/create_invoice_submission/tabs.adoc[]",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/create_invoice_submission.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "preflight_invoice_recipient": {
+            "main": "./lib/actions/preflight_invoice_recipient.js",
+            "title": "Preflight an invoice recipient",
+            "description": "Check whether Storecove can deliver an invoice for a list of ids.\ninclude::examples/invoice_submissions/preflight_invoice_recipient/tabs.adoc[]",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/preflight_invoice_recipient.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "create_legal_entity": {
+            "main": "./lib/actions/create_legal_entity.js",
+            "title": "Create a new LegalEntity",
+            "description": "Create a new LegalEntity.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/create_legal_entity.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_legal_entity": {
+            "main": "./lib/actions/delete_legal_entity.js",
+            "title": "Delete LegalEntity",
+            "description": "Delete a specific LegalEntity.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_legal_entity.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_legal_entity": {
+            "main": "./lib/actions/get_legal_entity.js",
+            "title": "Get LegalEntity",
+            "description": "Get a specific LegalEntity.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_legal_entity.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "update_legal_entity": {
+            "main": "./lib/actions/update_legal_entity.js",
+            "title": "Update LegalEntity",
+            "description": "Update a specific LegalEntity.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/update_legal_entity.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "create_peppol_identifier": {
+            "main": "./lib/actions/create_peppol_identifier.js",
+            "title": "Create a new PeppolIdentifier",
+            "description": "Create a new PeppolIdentifier.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/create_peppol_identifier.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_peppol_identifier": {
+            "main": "./lib/actions/delete_peppol_identifier.js",
+            "title": "Delete PeppolIdentifier",
+            "description": "Delete a PeppolIdentifier.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_peppol_identifier.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_invoice": {
+            "main": "./lib/actions/get_invoice.js",
+            "title": "Get Invoice",
+            "description": "Get a specific Invoice.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_invoice.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_invoice_ubl": {
+            "main": "./lib/actions/get_invoice_ubl.js",
+            "title": "Get Invoice as UBL",
+            "description": "Get a specific Invoice in UBL form.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_invoice_ubl.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "shop_account_requests_index": {
+            "main": "./lib/actions/shop_account_requests_index.js",
+            "title": "Get ShopAccountRequests",
+            "description": "Retrieve all active ShopAccountRequests for one of your entities.\ninclude::examples/shop_account_requests/shop_account_requests_index/tabs.adoc[]",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/shop_account_requests_index.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "create_shop_account_request": {
+            "main": "./lib/actions/create_shop_account_request.js",
+            "title": "Create ShopAccountRequest",
+            "description": "Create a new ShopAccountRequest\ninclude::examples/shop_account_requests/create_shop_account_request/tabs.adoc[]",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/create_shop_account_request.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_shop_account_request": {
+            "main": "./lib/actions/delete_shop_account_request.js",
+            "title": "Delete ShopAccountRequest",
+            "description": "Delete a specific ShopAccountRequest\ninclude::examples/shop_account_requests/delete_shop_account_request/tabs.adoc[]",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_shop_account_request.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_shop_account_request": {
+            "main": "./lib/actions/get_shop_account_request.js",
+            "title": "Get ShopAccountRequest",
+            "description": "Show a specific ShopAccountRequest\ninclude::examples/shop_account_requests/get_shop_account_request/tabs.adoc[]",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_shop_account_request.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "update_shop_account_request": {
+            "main": "./lib/actions/update_shop_account_request.js",
+            "title": "Update ShopAccountRequest",
+            "description": "Update a specific ShopAccountRequest\ninclude::examples/shop_account_requests/update_shop_account_request/tabs.adoc[]",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/update_shop_account_request.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "shop_accounts_index": {
+            "main": "./lib/actions/shop_accounts_index.js",
+            "title": "Get ShopAccounts for an entity",
+            "description": "Retrieve all active ShopAccounts for one of your entities.\ninclude::examples/shop_accounts/shop_accounts_index/tabs.adoc[]",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/shop_accounts_index.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "create_shop_account": {
+            "main": "./lib/actions/create_shop_account.js",
+            "title": "Create ShopAccount",
+            "description": "Create a new ShopAccount.\ninclude::examples/shop_accounts/create_shop_account/tabs.adoc[]",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/create_shop_account.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "shop_accounts_auth_failures": {
+            "main": "./lib/actions/shop_accounts_auth_failures.js",
+            "title": "Get ShopAccounts with authorization failures",
+            "description": "Get ShopAccounts with authorization failures.\ninclude::examples/shop_accounts/shop_accounts_auth_failures/tabs.adoc[]",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/shop_accounts_auth_failures.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_shop_account": {
+            "main": "./lib/actions/delete_shop_account.js",
+            "title": "Delete ShopAccount",
+            "description": "Delete a specific ShopAccount.\ninclude::examples/shop_accounts/delete_shop_account/tabs.adoc[]",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_shop_account.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_shop_account": {
+            "main": "./lib/actions/get_shop_account.js",
+            "title": "Get ShopAccount",
+            "description": "Get a specific ShopAccount.\ninclude::examples/shop_accounts/get_shop_account/tabs.adoc[]",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_shop_account.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "update_shop_account": {
+            "main": "./lib/actions/update_shop_account.js",
+            "title": "Update ShopAccount",
+            "description": "Update a specific ShopAccount.\ninclude::examples/shop_accounts/update_shop_account/tabs.adoc[]",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/update_shop_account.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "shops_index": {
+            "main": "./lib/actions/shops_index.js",
+            "title": "Get Shops",
+            "description": "Get all available shops.\ninclude::examples/shops/shops_index/tabs.adoc[]",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/shops_index.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

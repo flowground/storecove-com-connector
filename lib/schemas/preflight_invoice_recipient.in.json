@@ -1,0 +1,67 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "description": "Identifies the invoice recipient to preflight",
+            "properties": {
+                "publicIdentifiers": {
+                    "description": "The public identifiers for this invoice recipient.",
+                    "items": {
+                        "description": "A public identifier for this customer.",
+                        "properties": {
+                            "id": {
+                                "description": "The actual identifier.",
+                                "minLength": 2,
+                                "title": "Identifier",
+                                "type": "string"
+                            },
+                            "scheme": {
+                                "description": "The scheme of the identifier. See <<_peppol_schemes_list>> for a list.",
+                                "minLength": 3,
+                                "title": "Scheme",
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "scheme",
+                            "id"
+                        ],
+                        "title": "Public identifier",
+                        "type": "object"
+                    },
+                    "title": "Public identifiers",
+                    "type": "array"
+                },
+                "supplierId": {
+                    "description": "DEPRECATED.",
+                    "title": "Supplier id",
+                    "type": "integer"
+                },
+                "widgetIdentification": {
+                    "description": "The identification for the identifier related to the Storecove Destination Configuration widget.",
+                    "title": "Widget Identification",
+                    "properties": {
+                        "id": {
+                            "description": "Your id for this organization. This should match the id that you use for the Storecove widget (if you use that).",
+                            "minLength": 2,
+                            "title": "Entity id",
+                            "type": "string"
+                        },
+                        "legalEntityId": {
+                            "description": "The id of the LegalEntity this invoice should be sent for.",
+                            "title": "LegalEntity Id",
+                            "type": "integer"
+                        }
+                    },
+                    "required": [
+                        "legalEntityId",
+                        "id"
+                    ],
+                    "type": "object"
+                }
+            },
+            "title": "Invoice recipient preflight",
+            "type": "object"
+        }
+    }
+}

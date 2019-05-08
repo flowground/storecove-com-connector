@@ -1,0 +1,41 @@
+{
+    "type": "object",
+    "properties": {
+        "legal_entity_id": {
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+        },
+        "requestBody": {
+            "properties": {
+                "identifier": {
+                    "description": "The identifier.",
+                    "maxLength": 64,
+                    "minLength": 2,
+                    "title": "Identifier",
+                    "type": "string"
+                },
+                "scheme": {
+                    "description": "The scheme of the identifier. See <<_peppol_schemes_list>> for a list.",
+                    "maxLength": 64,
+                    "minLength": 2,
+                    "title": "Type",
+                    "type": "string"
+                },
+                "superscheme": {
+                    "description": "The superscheme of the identifier. Should always be \"iso6523-actorid-upis\".",
+                    "maxLength": 64,
+                    "minLength": 2,
+                    "title": "Type",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "identifier",
+                "scheme",
+                "superscheme"
+            ],
+            "type": "object"
+        }
+    }
+}

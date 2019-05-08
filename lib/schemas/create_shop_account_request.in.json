@@ -1,0 +1,32 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "external_user_id": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "request_name": {
+                    "type": "string"
+                },
+                "request_url": {
+                    "type": "string"
+                },
+                "username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "username",
+                "password",
+                "external_user_id",
+                "request_name",
+                "request_url"
+            ],
+            "type": "object"
+        }
+    }
+}
